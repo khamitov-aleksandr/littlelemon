@@ -1,7 +1,7 @@
 import "./styles.css";
 import React from 'react'
 
-function Header() {
+export default function Header() {
   return (
       <header>
           <img href="Logo.svg" alt="Logo of Little Lemon"/>
@@ -18,5 +18,3 @@ function Header() {
       </header>
   )
 }
-
-export default Header;

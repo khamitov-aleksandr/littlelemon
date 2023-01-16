@@ -1,0 +1,198 @@
+/* ---------------------------------------------------------------- */
+/* ------------------------------HEADER---------------------------- */
+/* ---------------------------------------------------------------- */
+
+header {
+    width: 1440px;
+    height: 123px;
+    background: #FFFFFF;
+    display: flex;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    margin-left: 280px;
+    text-decoration: none;
+    margin-right: 100px;
+  }
+
+nav > ul {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin-left: 140px;
+}
+
+nav > ul > li {
+    margin-left: 40px;
+    margin-right: 7px;
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 54px;
+    color: #010201;
+}
+
+nav > ul > li > a {
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000000
+}
+
+a:hover {
+    color: #E06733;
+    font-weight: 700px;
+    transition: color 2s, font-weight 2s;
+}
+
+a:active {
+    font-weight: 700px;
+    transition: font-weight 2s;
+}
+
+/* ---------------------------------------------------------------- */
+/* ------------------------------MAIN------------------------------ */
+/* ---------------------------------------------------------------- */
+
+.main {
+    width: 1440px;
+}
+
+section {
+    width: 1440px;
+}
+
+h1 {
+    font-family: 'Markazi Text';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+    color: #F4CE14;
+}
+
+h2 {
+    font-family: 'Markazi Text';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+    color: #000000;
+}
+
+h3 {
+    font-style: normal;
+}
+
+h4 {
+    font-style: normal;
+}
+
+h5 {
+    font-style: normal;
+}
+
+span {
+    font-family: 'Markazi Text';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+    color: #000000;
+}
+
+p {
+    font-family: 'Karla';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140.62%;
+    color: #FFFFFF;
+}
+
+li {
+    list-style: none;
+}
+
+.navbar {
+    background: brown;
+}
+
+/* ---------------------------------------------------------------- */
+/* ------------------------------HERO------------------------------ */
+/* ---------------------------------------------------------------- */
+
+.hero {
+    background: grey;
+}
+
+/* ---------------------------------------------------------------- */
+/* ------------------------------HIGHLIGHTS------------------------ */
+/* ---------------------------------------------------------------- */
+
+.highlights {
+    background: #FFFFFF;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    height: 400px;
+    background-color: #EDEFEE;
+    border-radius: 8px;
+}
+
+/* ---------------------------------------------------------------- */
+/* --------------------------TESTIMONIALS-------------------------- */
+/* ---------------------------------------------------------------- */
+
+.testimonials {
+    width: 1440px;
+    height: 590px;
+    background: #495E57;
+}
+
+/* ---------------------------------------------------------------- */
+/* -------------------------------ABOUT---------------------------- */
+/* ---------------------------------------------------------------- */
+
+.about {
+    width: 1440px;
+    height: 580px;
+    background: #FFFFFF;
+}
+
+/* ---------------------------------------------------------------- */
+/* ------------------------------FOOTER---------------------------- */
+/* ---------------------------------------------------------------- */
+
+footer {
+    width: 1440px;
+    height: 417px;
+    background: #D9D9D9;
+}
+
+@media (max-width: 700px) {
+    .grid-adjustable-columns {
+      display: grid;
+      grid-auto-flow: row;
+    }
+  }
+
+@media (min-width: 701px) {
+    .grid-adjustable-columns {
+      width: min(1000px,75rem);
+      margin: 0 auto;
+      grid-auto-flow: column;
+      gap: 1em;
+    }
+  }
