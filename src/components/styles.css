@@ -7,6 +7,7 @@ header {
     height: 123px;
     background: #FFFFFF;
     display: flex;
+    justify-content: space-around;
 }
 
 nav {
@@ -33,10 +34,6 @@ nav > ul > li {
     font-size: 18px;
     line-height: 54px;
     color: #010201;
-}
-
-nav > ul > li > a {
-    text-decoration: none;
 }
 
 a {
@@ -100,10 +97,10 @@ h5 {
 span {
     font-family: 'Markazi Text';
     font-style: normal;
-    font-weight: 700;
-    font-size: 40px;
-    line-height: 48px;
-    color: #000000;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: #FFFFFF;
 }
 
 p {
@@ -111,16 +108,25 @@ p {
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
-    line-height: 140.62%;
     color: #FFFFFF;
+}
+
+button {
+    width: 200px;
+    height: 60px;
+    background: #F4CE14;
+    border-radius: 16px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    color: #000000;
 }
 
 li {
     list-style: none;
-}
-
-.navbar {
-    background: brown;
 }
 
 /* ---------------------------------------------------------------- */
@@ -128,27 +134,92 @@ li {
 /* ---------------------------------------------------------------- */
 
 .hero {
-    background: grey;
+    width: 1440px;
+    height: 406px;
+    background: #495E57;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
 }
+
+.hero > article {
+    width: 422px;
+    margin: 60px 0px 0px 0px;
+}
+
+.hero > article > h2 {
+    margin: 0px 0px 10px 0px;
+    color: #F4CE14;
+}
+
+.hero > article > span {
+    margin: 10px 0px 10px 0px;
+}
+
+.hero > article > p {
+    margin: 20px 0px 20px 0px;
+}
+
+.hero > article > button {
+    margin: 60px 0px 0px 0px;
+}
+
+.hero > img {
+    width: 375px;
+    height: 440px;
+    background: url(./restauranfood.jpg);
+    border: 1px solid #000000;
+    border-radius: 16px;
+    margin: 10px 200px 0 0px;
+  }
 
 /* ---------------------------------------------------------------- */
 /* ------------------------------HIGHLIGHTS------------------------ */
 /* ---------------------------------------------------------------- */
 
 .highlights {
+    width: 1440px;
+    height: 716px;
     background: #FFFFFF;
+}
+
+.highlights > article {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.highlights > article > h2 {
+    /* margin: 0px 0px 0px 0px; */
+    color: #000000;
 }
 
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(3, 250px);
+    grid-auto-rows: 550px;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    justify-items: center;
+    gap: 150px;
 }
 
 .card {
     height: 400px;
     background-color: #EDEFEE;
     border-radius: 8px;
+    padding: 10px 10px 10px 10px;
+}
+
+.card > img {
+    width: 265px;
+    height: 187px;
+    border-radius: 16px 16px 0px 0px;
+}
+
+.card > p {
+    color: #000000;
 }
 
 /* ---------------------------------------------------------------- */
