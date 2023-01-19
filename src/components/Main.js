@@ -1,9 +1,12 @@
 import React from 'react';
+import { Routes, Route, Link } from 'react-router-dom';
 import "./styles.css";
 import restauranfood from './restauranfood.jpg';
 import greeksalad from './greeksalad.jpg';
 import bruchetta from './bruchetta.svg';
 import lemondessert from './lemondessert.jpg';
+import CustomersSay from './CustomersSay';
+import Chicago from './Chicago';
 
 function Main() {
   return (
@@ -13,14 +16,20 @@ function Main() {
               <h2>Little Lemon</h2>
               <span>Chicago</span>
               <p>We are family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist</p>
-              <button>Reserve a Table</button>
+              <button><Link to="/reservations">Reserve a Table</Link></button>
+              <Routes>
+                <Route path='/reservations'/>
+              </Routes>
             </article>
             <img src={restauranfood} alt="restauran food" />
           </section>
           <section className='highlights'>
             <article>
               <h2>This week specials!</h2>
-              <button>Online menu</button>
+              <button><Link to="/menu">Online menu</Link></button>
+              <Routes>
+                <Route path='/menu'/>
+              </Routes>
             </article>
               <div className='cards'>
                 <div className='card'>
@@ -46,19 +55,8 @@ function Main() {
                 </div>
               </div>
           </section>
-          <section className='testimonials'>
-            <article>
-              <h2>Testimonials</h2>
-            </article>
-          </section>
-          <section className='about'>
-            <article>
-              <h2>Little Lemon</h2>
-              <span>Chicago</span>
-            </article>
-            <img src="" alt=""/>
-            <img src="" alt=""/>
-          </section>
+          <CustomersSay />
+          <Chicago />
         </main>
   )
 }

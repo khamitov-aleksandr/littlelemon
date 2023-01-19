@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import Home from '../pages/Home';
 import About from '../pages/About';
@@ -25,7 +25,7 @@ export default function Nav() {
             <Route path="/about" element={<About/>}></Route>
             <Route path="/menu" element={<Menu/>}></Route>
             <Route path="/reservations" element={<Reservations/>}></Route>
-            <Route path="/order-online" element={<OrderOnline/>}></Route>
+            <Route path="/orde-online" element={<OrderOnline/>}></Route>
             <Route path="/login" element={<Login/>}></Route>
         </Routes>
     </>
