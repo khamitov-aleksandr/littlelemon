@@ -10,7 +10,7 @@ header {
     justify-content: space-around;
 }
 
-nav {
+header > nav {
     display: flex;
     justify-content: space-around;
     margin-left: 280px;
@@ -18,14 +18,14 @@ nav {
     margin-right: 100px;
   }
 
-nav > ul {
+header >nav > ul {
     display: flex;
     flex-direction: row;
     list-style-type: none;
     margin-left: 140px;
 }
 
-nav > ul > li {
+header > nav > ul > li {
     margin-left: 40px;
     margin-right: 7px;
     font-family: 'Inika';
@@ -42,7 +42,7 @@ a {
 }
 
 a:hover {
-    color: #E06733;
+    color: #ee9972;
     font-weight: 700px;
     transition: color 2s, font-weight 2s;
 }
@@ -92,6 +92,7 @@ h4 {
 
 h5 {
     font-style: normal;
+    color: #495E57;
 }
 
 span {
@@ -123,6 +124,7 @@ button {
     line-height: 21px;
     text-align: center;
     color: #000000;
+    cursor: pointer;
 }
 
 li {
@@ -167,7 +169,7 @@ li {
 .hero > img {
     width: 375px;
     height: 440px;
-    background: url(./restauranfood.jpg);
+    background: url(../assets/restauranfood.jpg);
     border: 1px solid #000000;
     border-radius: 16px;
     margin: 10px 0px 0 0px;
@@ -297,7 +299,7 @@ aside > article > p, aside > article > div > p {
     width: 370px;
     display: flex;
     flex-direction: column;
-    margin: 0 0 0 0;
+    margin: 0 50px 0 200px;
 }
 
 .about > article > h2 {
@@ -319,16 +321,16 @@ aside > article > p, aside > article > div > p {
     margin: 60px 0 0 0;
 }
 
-.about > div {
-    margin: 0;
-    padding: 0;
-}
-
-.about > div > img {
+.about > img {
     width: 272px;
     height: 338px;
     border: 1px solid #000000;
     border-radius: 16px;
+}
+
+.about > img:first-of-type {
+    transform: scaleX(-1);
+    margin: 200px -250px 0 250px;
 }
 
 /* ---------------------------------------------------------------- */
@@ -339,6 +341,41 @@ footer {
     width: 1440px;
     height: 417px;
     background: #D9D9D9;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: flex-start;
+    align-items: flex-start;
+}
+
+footer > img {
+    width: 272px;
+    height: 338px;
+    border: 1px solid #000000;
+    border-radius: 16px;
+}
+
+footer > nav {
+    flex-direction: row;
+    align-content: flex-start;
+    align-items: flex-start;
+    margin-top: 50px;
+}
+
+footer > nav > ul {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    align-items: flex-start;
+}
+
+footer > nav > ul > li {
+    font-family: 'Inika';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 54px;
+    color: #010201;
 }
 
 @media (max-width: 700px) {

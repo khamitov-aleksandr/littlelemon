@@ -1,43 +1,48 @@
 import "./styles.css";
-import { ReactComponent as Instagram } from './instagram.svg';
-import { ReactComponent as Facebook } from './facebook.svg';
-import { ReactComponent as Twitter } from './twitter.svg';
-import { ReactComponent as Pinterest } from './pinterest.svg';
-import React from 'react'
+import { ReactComponent as Instagram } from '../assets/instagram.svg';
+import { ReactComponent as Facebook } from '../assets/facebook.svg';
+import { ReactComponent as Twitter } from '../assets/twitter.svg';
+import { ReactComponent as Pinterest } from '../assets/pinterest.svg';
+import React from 'react';
+import restaurantchef from '../assets/restaurantchef.jpg';
+import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
     <footer>
-      <img href="Foto.png" alt="restaurant"/>
+      <img
+      src={restaurantchef}
+      alt="restaurant chef"
+      />
       <nav>
-        <h5>Doormat Nav igation</h5>
-          <ul>
-            <li><a href='#home' role="button">Home</a></li>
-            <li><a href='#about' role="button">About</a></li>
-            <li><a href='#menu' role="button">Menu</a></li>
-            <li><a href='#reservations' role="button">Reservations</a></li>
-            <li><a href='#orderonline' role="button">Order Online</a></li>
-            <li><a href='#login' role="button">Login</a></li>
-          </ul>
-        </nav>
-        <nav>
-          <h5>Doormat Nav igation</h5>
-          <ul>
-            <li><a href='https://www.instagram.com/' role="button">Adress</a></li>
-            <li><a href='https://www.facebook.com/' role="button">Phone number</a></li>
-            <li><a href='https://twitter.com/' role="button">email</a></li>
-            <li><a href="https://www.pinterest.com/" role="button">pinterest</a></li>
-          </ul>
-        </nav>
-        <nav>
-        <h5>Social media links</h5>
-          <ul>
-            <li><a href="https://www.instagram.com/" role="button"><Instagram /></a></li>
-            <li><a href="https://www.facebook.com/" role="button"><Facebook /></a></li>
-            <li><a href="https://twitter.com/" role="button"><Twitter /></a></li>
-            <li><a href="https://www.pinterest.com/" role="button"><Pinterest /></a></li>
-          </ul>
-        </nav>
+        <ul>
+          <h5>Doormat Navigation</h5>
+            <li><Link to="/" className="nav-item">Home</Link></li>
+            <li><Link to="/about" className="nav-item">About</Link></li>
+            <li><Link to="/menu" className="nav-item">Menu</Link></li>
+            <li><Link to="/reservations" className="nav-item">Reservations</Link></li>
+            <li><Link to="/order-online" className="nav-item">Order Online</Link></li>
+            <li><Link to="/login" className="nav-item">Login</Link></li>
+        </ul>
+      </nav>
+      <nav>
+        <ul>
+          <h5>Contact</h5>
+            <li><i>Adress:</i> P.za Dante, 57, 80134 Napoli NA, Italy</li>
+            <li><i>Phone number:</i> +00 (0) 0-00-00-00-00</li>
+            <li><i>Email:</i> little.lemon@gmail.com</li>
+        </ul>
+      </nav>
+      <nav>
+        <ul>
+          <h5>Social media links</h5>
+            <br/>
+            <li><a href="https://www.instagram.com/" role="button" alt="Instagram"><Instagram /></a></li>
+            <li><a href="https://www.facebook.com/" role="button" alt="Facebook"><Facebook /></a></li>
+            <li><a href="https://twitter.com/" role="button" alt="Twitter"><Twitter /></a></li>
+            <li><a href="https://www.pinterest.com/" role="button" alt="Pinterest"><Pinterest /></a></li>
+        </ul>
+      </nav>
     </footer>
   )
 }

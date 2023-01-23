@@ -1,6 +1,6 @@
 import React from 'react';
-import MarioAndAdrianA from './MarioAndAdrianA.jpg';
-import MarioAndAdrianB from './MarioAndAdrianB.jpg'
+import MarioAndAdrianA from '../assets/MarioAndAdrianA.jpg';
+import MarioAndAdrianB from '../assets/MarioAndAdrianB.jpg'
 
 function Chicago() {
     return (
@@ -12,10 +12,8 @@ function Chicago() {
               Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. </p>
               <button>See more</button>
             </article>
-            <div>
               <img src={MarioAndAdrianA} alt="Mario and Adrian side A" />
               <img src={MarioAndAdrianB} alt="Mario and Adrian side B" />
-            </div>
         </section>
     )
 }

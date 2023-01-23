@@ -4,7 +4,7 @@ export function showStars() {
     return (
             <img
                 height={15}
-                src={require('./star.jpg')}
+                src={require('../assets/star.jpg')}
                 alt={"star"}
             />
     );
@@ -24,7 +24,7 @@ function CustomersSay() {
                 <div>
                     <img
                         height={50}
-                        src={require('./sara.jpg')}
+                        src={require('../assets/sara.jpg')}
                         alt={"sara"}
                         borderTopLeftRadius={15}
                     />
@@ -42,7 +42,7 @@ function CustomersSay() {
                 <div>
                     <img
                         height={50}
-                        src={require('./jhon.jpg')}
+                        src={require('../assets/jhon.jpg')}
                         alt={"jhon"}
                         borderTopLeftRadius={15}
                     />
@@ -60,7 +60,7 @@ function CustomersSay() {
                 <div>
                     <img
                         height={50}
-                        src={require('./devid.jpg')}
+                        src={require('../assets/devid.jpg')}
                         alt={"Devid"}
                         borderTopLeftRadius={15}
                     />
@@ -78,13 +78,12 @@ function CustomersSay() {
                 <div>
                     <img
                         height={50}
-                        src={require('./elizabet.jpg')}
+                        src={require('../assets/elizabet.jpg')}
                         alt={"elizabet"}
                         borderTopLeftRadius={15}
                     />
                         <p>Elizabet Blue</p>
                         <p>(Eliz05)</p>
-
                 </div>
                 <p>“Definitely the best restaurant. Discovery of the year!”</p>
             </article>
