@@ -6,6 +6,7 @@ import Menu from '../pages/Menu';
 import Reservations from '../pages/Reservations';
 import OrderOnline from '../pages/OrderOnline';
 import Login from '../pages/Login';
+import Confirmation from '../pages/Confermation';
 
 export default function Routing() {
     return (
@@ -16,6 +17,7 @@ export default function Routing() {
             <Route path="/reservations" element={<Reservations/>}></Route>
             <Route path="/order-online" element={<OrderOnline/>}></Route>
             <Route path="/login" element={<Login/>}></Route>
+            <Route path="/confirmation" element= {<Confirmation />}/>
         </Routes>
   );
 }
