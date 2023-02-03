@@ -393,3 +393,15 @@ footer > nav > ul > li {
       gap: 1em;
     }
   }
+
+input:focus:invalid {
+    border: 2px solid red;
+}
+
+input:invalid:required {
+  background-image: linear-gradient(to right, pink, lightgreen);
+}
+
+input:valid {
+  border: 2px solid lightgreen;
+}
