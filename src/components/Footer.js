@@ -16,13 +16,12 @@ function Footer() {
       />
       <nav>
         <ul>
-          <h5>Doormat Navigation</h5>
-            <li><Link to="/" className="nav-item">Home</Link></li>
-            <li><Link to="/about" className="nav-item">About</Link></li>
-            <li><Link to="/menu" className="nav-item">Menu</Link></li>
-            <li><Link to="/reservations" className="nav-item">Reservations</Link></li>
-            <li><Link to="/order-online" className="nav-item">Order Online</Link></li>
-            <li><Link to="/login" className="nav-item">Login</Link></li>
+          <li><Link to="/" className="nav-item">Home</Link></li>
+          <li><Link to="/about" className="nav-item">About</Link></li>
+          <li><Link to="/menu" className="nav-item">Menu</Link></li>
+          <li><Link to="/reservations" className="nav-item">Reservations</Link></li>
+          <li><Link to="/order-online" className="nav-item">Order Online</Link></li>
+          <li><Link to="/login" className="nav-item">Login</Link></li>
         </ul>
       </nav>
       <nav>
@@ -35,12 +34,10 @@ function Footer() {
       </nav>
       <nav>
         <ul>
-          <h5>Social media links</h5>
-            <br/>
-            <li><a href="https://www.instagram.com/" role="button" alt="Instagram"><Instagram /></a></li>
-            <li><a href="https://www.facebook.com/" role="button" alt="Facebook"><Facebook /></a></li>
-            <li><a href="https://twitter.com/" role="button" alt="Twitter"><Twitter /></a></li>
-            <li><a href="https://www.pinterest.com/" role="button" alt="Pinterest"><Pinterest /></a></li>
+          <li><a href="https://www.instagram.com/" role="button" alt="Instagram"><Instagram /></a></li>
+          <li><a href="https://www.facebook.com/" role="button" alt="Facebook"><Facebook /></a></li>
+          <li><a href="https://twitter.com/" role="button" alt="Twitter"><Twitter /></a></li>
+          <li><a href="https://www.pinterest.com/" role="button" alt="Pinterest"><Pinterest /></a></li>
         </ul>
       </nav>
     </footer>

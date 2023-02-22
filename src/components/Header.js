@@ -8,6 +8,12 @@ export default function Header() {
       <header>
           <Logo />
           <Nav />
+          <div id="burger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
       </header>
   )
 }

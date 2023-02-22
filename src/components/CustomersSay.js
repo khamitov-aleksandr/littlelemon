@@ -26,7 +26,6 @@ function CustomersSay() {
                         height={50}
                         src={require('../assets/sara.jpg')}
                         alt={"sara"}
-                        borderTopLeftRadius={15}
                     />
                         <p>Sara Lopez</p>
                         <p>(Sara72)</p>
@@ -44,7 +43,6 @@ function CustomersSay() {
                         height={50}
                         src={require('../assets/jhon.jpg')}
                         alt={"jhon"}
-                        borderTopLeftRadius={15}
                     />
                         <p>Jhon Aflek</p>
                         <p>(Jhon83)</p>
@@ -62,7 +60,6 @@ function CustomersSay() {
                         height={50}
                         src={require('../assets/devid.jpg')}
                         alt={"Devid"}
-                        borderTopLeftRadius={15}
                     />
                         <p>Devid Grey</p>
                         <p>(Dav72)</p>
@@ -80,7 +77,6 @@ function CustomersSay() {
                         height={50}
                         src={require('../assets/elizabet.jpg')}
                         alt={"elizabet"}
-                        borderTopLeftRadius={15}
                     />
                         <p>Elizabet Blue</p>
                         <p>(Eliz05)</p>

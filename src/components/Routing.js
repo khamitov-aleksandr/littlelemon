@@ -6,9 +6,13 @@ import Menu from '../pages/Menu';
 import Reservations from '../pages/Reservations';
 import OrderOnline from '../pages/OrderOnline';
 import Login from '../pages/Login';
-import Confirmation from '../pages/Confermation';
+import Feedback from '../pages/Feedback';
+import Confirmation from '../pages/Confirmation';
 
 export default function Routing() {
+    const handleSubmit= () => {
+        console.log("Form submitted!");
+    }
     return (
         <Routes>
             <Route path="*" element={<Homepages/>} />
@@ -17,6 +21,7 @@ export default function Routing() {
             <Route path="/reservations" element={<Reservations/>}></Route>
             <Route path="/order-online" element={<OrderOnline/>}></Route>
             <Route path="/login" element={<Login/>}></Route>
+            <Route path="/feedback" element={<Feedback onSubmit={handleSubmit}/>}></Route>
             <Route path="/confirmation" element= {<Confirmation />}/>
         </Routes>
   );
