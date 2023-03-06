@@ -30,7 +30,7 @@ function CustomersSay() {
                         <p>Sara Lopez</p>
                         <p>(Sara72)</p>
                 </div>
-                <p>“Seriously cannot stop thinking about the Turkish Mac n’ Cheese!!”</p>
+                <p>“Seriously cannot stop thinking about the Turkish Mac n’ Cheese!”</p>
             </article>
             <article>
                 {showStars()}

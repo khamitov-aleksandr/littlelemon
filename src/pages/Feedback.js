@@ -1,6 +1,16 @@
-import React, {useState} from "react";
+import React, {useState} from 'react';
 
 function Feedback({onSubmit}) {
+
+    const handleChange = event => {
+        const result = event.target.value.replace(/[^a-z]/gi, '');
+        setName(result);
+      };
+
+    const handleScrollToTop = () => {
+        window.scrollTo(0, 0);
+    }
+
     const [name, setName] =  useState("");
     const [score, setScore] =  useState("10");
     const [comment, setComment] =  useState("");
@@ -18,13 +28,14 @@ function Feedback({onSubmit}) {
         setComment('');
         console.log("Form submited");
         onSubmit({score, comment});
+        window.scrollTo(0, 0);
     };
 
     return (
         <div className="feedback">
             <form onSubmit={handleSubmit}>
                 <h2 className="title">Feedback form</h2>
-                    <div className="field">
+                    <div className="field ic3">
                         <label htmlFor="score">Score: {score} ⭐</label>
                         <input
                             id="score"
@@ -32,32 +43,42 @@ function Feedback({onSubmit}) {
                             type="range"
                             min="0"
                             max="10"
+                            className="ic3"
                             value={score}
                             onChange={e => setScore(e.target.value)}
                         />
-                        <label htmlFor="comment">Comments:</label>
+                    </div>
+                    <div className="input-container ic3">
+                        <label htmlFor="comment" className="ic3">Comments:</label>
                         <textarea
                             id="comment"
                             name="comment"
                             rows={6}
                             cols={30}
                             value={comment}
+                            className="inputTime ic3"
                             placeholder={textAreaPlaceholder}
                             onChange={(e) => {
                                 setComment(e.target.value);
                             }}
                         />
-                        <div className="input-container ic1">
-                            <input id="name" className="input" type="text" name="name"                             minLength={2}
-                                maxLength={20}
-                                value={name}
-                                required
-                                onChange={(e) => setName(e.target.value)}/>
-                            <div className="cut"></div>
-                            <label htmlFor="name" className="placeholder">Name:</label>
-                        </div>
-                        <button disabled={isDisabled && !name} type="submit">Submit</button>
                     </div>
+                    <div className="input-container ic3">
+                            <input
+                                id="name"
+                                className="input ic3"
+                                type="text"
+                                name="name"
+                                placeholder=" "
+                                minLength={2}
+                                maxLength={18}
+                                value={name}
+                                onChange={handleChange}
+                            />
+                            <div className="cut ic3"></div>
+                            <label htmlFor="name" className="placeholder ic3">Name</label>
+                    </div>
+                    <button className="ic4" disabled={!name} type="submit" onClick={handleScrollToTop}>Submit</button>
             </form>
         </div>
     );

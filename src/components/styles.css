@@ -43,12 +43,12 @@ a {
 a:hover {
     color: #ee9972;
     font-weight: 700px;
-    transition: color 2s, font-weight 2s;
+    transition: color 0.5s, font-weight 0.5s;
 }
 
 a:active {
     font-weight: 700px;
-    transition: font-weight 2s;
+    transition: font-weight 0.5s;
 }
 
 #burger-menu {
@@ -89,10 +89,6 @@ h3 {
     font-style: normal;
 }
 
-h4 {
-    font-style: normal;
-}
-
 h5 {
     font-style: normal;
     color: #495E57;
@@ -122,7 +118,7 @@ button {
     border-radius: 16px;
     font-family: 'Roboto';
     font-style: normal;
-    font-weight: 400;
+    font-weight: bold;
     font-size: 18px;
     line-height: 21px;
     text-align: center;
@@ -130,9 +126,24 @@ button {
     cursor: pointer;
 }
 
+button:hover {
+    background: #f3d851;
+}
+
+button:disabled {
+    background-color: #ee9972;
+    cursor: auto;
+}
+
 li {
     list-style: none;
 }
+
+.nav a.active {
+    text-decoration: none;
+    font-weight: bold;
+    color: #ee9972;
+  }
 
 /* ---------------------------------------------------------------- */
 /* ------------------------------HERO------------------------------ */
@@ -149,24 +160,28 @@ li {
 
 .hero > article {
     width: 422px;
-    margin: 60px 0 0 0;
+    margin: 60px 0 0 40px;
 }
 
 .hero > article > h2 {
-    margin: 0 0 10px 50px;
+    margin: 0 0 10px 0;
     color: #F4CE14;
 }
 
 .hero > article > span {
-    margin: 10px 0 10px 50px;
+    margin: 10px 0 10px 0;
 }
 
 .hero > article > p {
-    margin: 20px 0 20px 50px;
+    margin: 20px 0 20px 0;
 }
 
-.hero > article > button {
-    margin: 60px 0 0 50px;
+.btn1 {
+    margin: 50px 0 0 0;
+}
+
+.btn2 {
+    margin: 0;
 }
 
 .hero > img {
@@ -191,16 +206,18 @@ li {
 .highlights > article {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    margin-top: 100px;
+    margin: 100px 0 0 0;
 }
 
 .highlights > article > h2 {
     color: #000000;
+    margin-left: 95px;
 }
 
-.highlights > article > button {
-    margin: 0 170px 0 350px;
+.highlights > article > a {
+    margin-right: 95px;
 }
 
 .cards {
@@ -215,7 +232,8 @@ li {
 }
 
 .card {
-    height: 400px;
+    display: grid;
+    height: 440px;
     background-color: #EDEFEE;
     border-radius: 8px;
     padding: 10px 10px 10px 10px;
@@ -229,6 +247,33 @@ li {
 
 .card > p {
     color: #000000;
+}
+
+.card > h3 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.card > div > button {
+    width: 110px;
+    height: 50px;
+    border-radius: 16px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.m4 {
+    height: 1480px;
+    display: grid;
+    grid-template-columns: repeat(2, 250px);
+    grid-auto-rows: 350px;
+    align-items: center;
+    align-content: start;
+    justify-content: center;
+    justify-items: center;
+    gap: 150px;
+    margin-top: 5px;
+    margin-bottom: 10px;
 }
 
 /* ---------------------------------------------------------------- */
@@ -302,7 +347,7 @@ aside > article > p, aside > article > div > p {
     width: 370px;
     display: flex;
     flex-direction: column;
-    margin: 0 50px 0 200px;
+    margin: 0px 100px 0 150px;
 }
 
 .about > article > h2 {
@@ -320,20 +365,43 @@ aside > article > p, aside > article > div > p {
     margin: 20px 0 20px 0;
 }
 
-.about > article > button {
-    margin: 60px 0 0 0;
+.btn3 {
+    left: 150px;
+    position: absolute;
+}
+
+[data-tooltip]::after {
+    content: attr(data-tooltip);
+}
+
+[data-tooltip]::after {
+    opacity: 0;
+}
+
+[data-tooltip]::after {
+    transition: 1s;
+}
+
+[data-tooltip]::after {
+    pointer-events: none;
+}
+
+[data-tooltip]:hover::after {
+    opacity: 1;
+    margin-left: 150px;
+    color: #eee;
 }
 
 .about > img {
-    width: 272px;
-    height: 338px;
+    width: 350px;
+    height: 310px;
     border: 1px solid #000000;
     border-radius: 16px;
 }
 
 .about > img:first-of-type {
     transform: scaleX(-1);
-    margin: 200px -250px 0 250px;
+    margin: 150px -180px 50px 100px;
 }
 
 /* ---------------------------------------------------------------- */
@@ -342,7 +410,7 @@ aside > article > p, aside > article > div > p {
 
 footer {
     width: 100%;
-    height: 417px;
+    height: 360px;
     background: #D9D9D9;
     display: flex;
     flex-direction: row;
@@ -352,17 +420,15 @@ footer {
 }
 
 footer > img {
-    width: 272px;
-    height: 338px;
-    border: 1px solid #000000;
-    border-radius: 16px;
+    width: 75px;
+    height: 110px;
 }
 
 footer > nav {
     flex-direction: row;
     align-content: flex-start;
     align-items: flex-start;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 footer > nav > ul {
@@ -379,59 +445,99 @@ footer > nav > ul > li {
     font-size: 18px;
     line-height: 54px;
     color: #010201;
+    height: 40px;
+}
+
+.footer-contact {
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+input:required {
+    border: 0.5px solid red;
 }
 
 input:focus:invalid {
     border: 2px solid red;
 }
 
+input:invalid {
+    border: 2px solid red;
+}
+
 input:valid {
-  border: 2px solid lightgreen;
+  border: 1px solid lightgreen;
 }
 /*==============================LOGIN=====================================*/
 .form {
     background-color: #495E57;
     border-radius: 20px;
     box-sizing: border-box;
-    height: 610px;
+    height: 640px;
     padding: 20px;
     width: 360px;
     margin-bottom: 20px;
   }
 
-  .form > span {
+.bookForm {
+    background-color: #495E57;
+    border-radius: 20px;
+    box-sizing: border-box;
+    height: 1200px;
+    padding: 20px;
+    width: 360px;
+    margin-bottom: 20px;
+}
+
+.bookForm > small {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+}
+
+.form > span {
     text-align: center;
     align-items: center;
     margin-left: 70px;
-  }
+}
 
-  .title {
+.title {
     color: #F4CE14;
     font-family: sans-serif;
     font-size: 36px;
     font-weight: 600;
     margin-top: 30px;
     text-align: center;
-  }
-  .subtitle {
+}
+.subtitle {
     color: #F4CE14;
     font-family: sans-serif;
     font-size: 16px;
     font-weight: 600;
     margin-top: 10px;
-  }
-  .input-container {
+    text-align: center;
+}
+.input-container {
     height: 50px;
     position: relative;
     width: 100%;
-  }
-  .ic1 {
+}
+.ic1 {
     margin-top: 40px;
-  }
-  .ic2 {
-    margin-top: 30px;
-  }
-  .input {
+}
+.ic2 {
+    margin-top: 40px;
+}
+.ic3 {
+    margin-top: 40px;
+}
+.ic4 {
+    margin-top: 70px;
+}
+
+.input {
     background-color: #495E57;
     border-radius: 12px;
     border: 0;
@@ -442,8 +548,34 @@ input:valid {
     outline: 0;
     padding: 4px 20px 0;
     width: 100%;
-  }
-  .cut {
+}
+
+.inputTime {
+    background-color: #495E57;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    font-size: 18px;
+    height: 100%;
+    outline: 0;
+    padding: 4px 20px 0;
+    width: 100%;
+}
+
+.inputTime:valid {
+    border: 1px solid lightgreen;
+}
+
+/* Workaround to remove autofill color from inputs */
+input, select {
+    color: #eee;
+    -webkit-text-fill-color: #eee;
+    -webkit-background-clip: text;
+    background-clip:  text;
+}
+
+.cut {
     background-color: #495E57;
     border-radius: 10px;
     height: 20px;
@@ -453,15 +585,15 @@ input:valid {
     transform: translateY(0);
     transition: transform 200ms;
     width: 76px;
-  }
-  .cut-short {
+}
+.cut-short {
     width: 50px;
-  }
-  .input:focus ~ .cut,
-  .input:not(:placeholder-shown) ~ .cut {
+}
+.input:focus ~ .cut,
+.input:not(:placeholder-shown) ~ .cut {
     transform: translateY(8px);
-  }
-  .placeholder {
+}
+.placeholder {
     color: #D9D9D9;
     font-family: sans-serif;
     left: 20px;
@@ -471,18 +603,33 @@ input:valid {
     transform-origin: 0 50%;
     transition: transform 200ms, color 200ms;
     top: 20px;
-  }
-  .input:focus ~ .placeholder,
-  .input:not(:placeholder-shown) ~ .placeholder {
+}
+
+.placeholderbook {
+    color: #D9D9D9;
+    font-family: sans-serif;
+    left: 10px;
+    line-height: 14px;
+    pointer-events: none;
+    position: absolute;
+    top: -25px;
+    margin: 0;
+    padding: 0;
+}
+
+.input:focus ~ .placeholder,
+.input:not(:placeholder-shown) ~ .placeholder {
     transform: translateY(-30px) translateX(10px) scale(0.75);
-  }
-  .input:not(:placeholder-shown) ~ .placeholder {
+}
+
+.input:not(:placeholder-shown) ~ .placeholder {
     color: #808097;
-  }
-  .input:focus ~ .placeholder {
+}
+
+.input:focus ~ .placeholder {
     color: #dc2f55;
-  }
-  .submit {
+}
+.submit {
     border: 0;
     box-sizing: border-box;
     color: #010201;
@@ -491,14 +638,31 @@ input:valid {
     align-items: center;
     outline: 0;
     width: 100%;
-  }
+}
 
-  .submit:first-of-type {
+.submit:first-of-type {
     margin-top: 38px;
-  }
-  .submit:active {
+    margin-bottom: 30px;
+}
+
+.submit:active {
     background-color: #ee9972;
-  }
+}
+
+.accept {
+    border: 0;
+    box-sizing: border-box;
+    color: #010201;
+    margin-top: 10px;
+    align-items: center;
+    outline: 0;
+    width: 100%;
+}
+
+.input-container > textarea {
+    padding: 0;
+    max-width: 100%;
+}
 /*±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±FEEDBACK±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±±*/
 
 .feedback {
@@ -506,7 +670,7 @@ input:valid {
     background-color: #495E57;
     border-radius: 20px;
     box-sizing: border-box;
-    height: 510px;
+    height: 560px;
     padding: 20px;
     width: 360px;
     margin-bottom: 20px;
@@ -522,16 +686,64 @@ label {
     margin-right: 20px;
 }
 
-.labelforreservation {
-    margin: 0;
-    text-align: center;
-}
-
 textarea {
-    border-radius: 12px;
     resize: none;
 }
 
+.aboutrestaurant {
+    position: relative;
+    border-radius: 20px;
+    box-sizing: border-box;
+    height: 610px;
+    padding: 20px;
+    width: 380px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 45px;
+    background-color: #495E57;
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.aboutrestaurant > .subtitle {
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+
+.aboutrestaurant > div {
+    display: flex;
+    align-items: center;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.bg-img::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("../assets/restaurantchef.jpg");
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.9;
+}
+
+.bg-img {
+    min-height: 380px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 @media screen and (max-width: 768px) {
     html {
@@ -577,12 +789,12 @@ textarea {
     a:hover {
         color: #ee9972;
         font-weight: 700px;
-        transition: color 2s, font-weight 2s;
+        transition: color 1s, font-weight 1s;
     }
 
     a:active {
         font-weight: 700px;
-        transition: font-weight 2s;
+        transition: font-weight 1s;
     }
 
     #burger-menu {
@@ -609,10 +821,6 @@ textarea {
     }
 
     h3 {
-        font-style: normal;
-    }
-
-    h4 {
         font-style: normal;
     }
 
@@ -728,8 +936,28 @@ textarea {
 
     .card > p {
         color: #000000;
+        text-align: center;
+        font-size: small;
     }
 
+    .card > h3 {
+        margin-top: 1px;
+        margin-bottom: 1px;
+        text-align: center;
+    }
+
+    .m4 {
+        display: grid;
+        grid-template-columns: repeat(2, 200px);
+        grid-auto-rows: 350px;
+        align-items: center;
+        align-content: start;
+        justify-content: center;
+        justify-items: center;
+        gap: 50px;
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
     /* ---------------------------------------------------------------- */
     /* --------------------------TESTIMONIALS-------------------------- */
 
@@ -884,11 +1112,11 @@ textarea {
     }
 }
 
-  @media screen and (max-width: 320px) {
-    html {
-        width: 320px;
+    @media screen and (max-width: 320px) {
+        html {
+            width: 320px;
+        }
     }
-  }
 /* @media screen and (max-width: 1200px) { */
 /* @media screen and (max-width: 992px) { */
 /* @media screen and (max-width: 768px) { */

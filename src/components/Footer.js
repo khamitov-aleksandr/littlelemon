@@ -4,42 +4,48 @@ import { ReactComponent as Facebook } from '../assets/facebook.svg';
 import { ReactComponent as Twitter } from '../assets/twitter.svg';
 import { ReactComponent as Pinterest } from '../assets/pinterest.svg';
 import React from 'react';
-import restaurantchef from '../assets/restaurantchef.jpg';
+import footerlogo from '../assets/footerlogo.png';
 import { Link } from 'react-router-dom';
 
 function Footer() {
+
+  const handleScrollToTop = () => {
+    window.scrollTo(0, 0);
+  }
+
   return (
     <footer>
-      <img
-      src={restaurantchef}
-      alt="restaurant chef"
-      />
-      <nav>
-        <ul>
-          <li><Link to="/" className="nav-item">Home</Link></li>
-          <li><Link to="/about" className="nav-item">About</Link></li>
-          <li><Link to="/menu" className="nav-item">Menu</Link></li>
-          <li><Link to="/reservations" className="nav-item">Reservations</Link></li>
-          <li><Link to="/order-online" className="nav-item">Order Online</Link></li>
-          <li><Link to="/login" className="nav-item">Login</Link></li>
-        </ul>
-      </nav>
-      <nav>
-        <ul>
-          <h5>Contact</h5>
-            <li><i>Adress:</i> P.za Dante, 57, 80134 Napoli NA, Italy</li>
-            <li><i>Phone number:</i> +00 (0) 0-00-00-00-00</li>
-            <li><i>Email:</i> little.lemon@gmail.com</li>
-        </ul>
-      </nav>
-      <nav>
-        <ul>
-          <li><a href="https://www.instagram.com/" role="button" alt="Instagram"><Instagram /></a></li>
-          <li><a href="https://www.facebook.com/" role="button" alt="Facebook"><Facebook /></a></li>
-          <li><a href="https://twitter.com/" role="button" alt="Twitter"><Twitter /></a></li>
-          <li><a href="https://www.pinterest.com/" role="button" alt="Pinterest"><Pinterest /></a></li>
-        </ul>
-      </nav>
+        <img
+        src={footerlogo}
+        alt="footer-logo"
+        />
+        <nav>
+          <ul>
+            <li><Link to="/" className="nav-item" onClick={handleScrollToTop}>Home</Link></li>
+            <li><Link to="/about" className="nav-item" onClick={handleScrollToTop}>About</Link></li>
+            <li><Link to="/menu" className="nav-item" onClick={handleScrollToTop}>Menu</Link></li>
+            <li><Link to="/reservations" className="nav-item" onClick={handleScrollToTop}>Reservations</Link></li>
+            <li><Link to="/order-online" className="nav-item" onClick={handleScrollToTop}>Order Online</Link></li>
+            <li><Link to="/login" className="nav-item" onClick={handleScrollToTop}>Login</Link></li>
+            <li><Link to="/feedback" className="nav-item" onClick={handleScrollToTop}>Feedback</Link></li>
+          </ul>
+        </nav>
+        <nav>
+          <ul>
+              <h5 className="footer-contact">Contact</h5>
+              <li><i>Adress:</i> P.za Dante, 57, 80134 Napoli NA, Italy</li>
+              <li><i>Phone number:</i> +00 (0) 0-00-00-00-00</li>
+              <li><i>Email:</i> little.lemon@gmail.com</li>
+          </ul>
+        </nav>
+        <nav>
+          <ul>
+            <li><a target="_blank" rel="noreferrer" href="https://www.instagram.com/" role="button" alt="Instagram"><Instagram /></a></li>
+            <li><a target="_blank" rel="noreferrer" href="https://www.facebook.com/" role="button" alt="Facebook"><Facebook /></a></li>
+            <li><a target="_blank" rel="noreferrer" href="https://twitter.com/" role="button" alt="Twitter"><Twitter /></a></li>
+            <li><a target="_blank" rel="noreferrer" href="https://www.pinterest.com/" role="button" alt="Pinterest"><Pinterest /></a></li>
+          </ul>
+        </nav>
     </footer>
   )
 }
