@@ -12,6 +12,7 @@ header {
 
 header > nav {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around;
     text-decoration: none;
     margin-right: 30px;
@@ -237,6 +238,11 @@ li {
     background-color: #EDEFEE;
     border-radius: 8px;
     padding: 10px 10px 10px 10px;
+    transition: .3s;
+}
+/* hover effect on siblings */
+.cards:hover > :not(:hover) {
+    opacity: .3;
 }
 
 .card > img {
@@ -462,11 +468,28 @@ input:focus:invalid {
 }
 
 input:invalid {
-    border: 2px solid red;
+    border: 1px solid red;
+    animation: shake 0.2s 2;
+}
+@keyframes shake {
+    25% {
+        translate: 6px 0;
+    }
+    50% {
+        translate: -6px 0;
+    }
+    75% {
+        translate: 6px 0;
+    }
 }
 
 input:valid {
   border: 1px solid lightgreen;
+}
+
+.attention {
+    color: rgb(194, 53, 53);
+    margin-left: 10px;
 }
 /*==============================LOGIN=====================================*/
 .form {
@@ -744,6 +767,45 @@ textarea {
     justify-content: center;
     align-items: center;
 }
+/*============================== CONFIRMATION =====================================*/
+.formconfirm {
+    background-color: #495E57;
+    border-radius: 20px;
+    box-sizing: border-box;
+    height: 530px;
+    padding: 20px;
+    width: 360px;
+    margin-bottom: 20px;
+}
+.titleconfirm {
+    color: #F4CE14;
+    font-family: sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    margin-top: 30px;
+    text-align: center;
+}
+.subtitleconfirm {
+    color: #F4CE14;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.acceptconfirm {
+    border: 0;
+    box-sizing: border-box;
+    color: #010201;
+    margin-top: 10px;
+    align-items: center;
+    outline: 0;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+
 /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
 @media screen and (max-width: 768px) {
     html {
