@@ -25,7 +25,7 @@ function BookingForm(props) {
       }
 
     const handleSubmit = (e) => {
-        console.log("?");
+        console.log("Form submitted");
     }
 
     const handleDateChange = (e) => {
