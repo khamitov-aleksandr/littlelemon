@@ -1,6 +1,12 @@
 import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
 
 function Feedback({onSubmit}) {
+
+    const [name, setName] =  useState("");
+    const [score, setScore] =  useState("10");
+    const [comment, setComment] =  useState("");
+    const [touched, setTouched] = useState(false);
 
     const handleChange = event => {
         const result = event.target.value.replace(/[^a-z]/gi, '');
@@ -10,10 +16,7 @@ function Feedback({onSubmit}) {
     const handleScrollToTop = () => {
         window.scrollTo(0, 0);
     }
-
-    const [name, setName] =  useState("");
-    const [score, setScore] =  useState("10");
-    const [comment, setComment] =  useState("");
+    const isValidName = name !== "";
 
     const isDisabled = Number(score) <= 5 && comment.length <= 10;
 
@@ -48,7 +51,7 @@ function Feedback({onSubmit}) {
                             onChange={e => setScore(e.target.value)}
                         />
                     </div>
-                    <div className="input-container ic3">
+                    <div className="input-container-feedback ic3">
                         <label htmlFor="comment" className="ic3">Comments:</label>
                         <textarea
                             id="comment"
@@ -70,15 +73,18 @@ function Feedback({onSubmit}) {
                                 type="text"
                                 name="name"
                                 placeholder=" "
+                                required
                                 minLength={2}
                                 maxLength={18}
                                 value={name}
                                 onChange={handleChange}
+                                onBlur={() => setTouched(true)}
                             />
+                            <p className="attention">{touched? (isValidName ? "" : "* Please fill in this field ") : null}</p>
                             <div className="cut ic3"></div>
                             <label htmlFor="name" className="placeholder ic3">Name</label>
                     </div>
-                    <button className="ic4" disabled={!name} type="submit" onClick={handleScrollToTop}>Submit</button>
+                    <Link to="/thanks"><button className="ic4" disabled={!name} type="submit" onClick={handleScrollToTop}>Submit</button></Link>
             </form>
         </div>
     );

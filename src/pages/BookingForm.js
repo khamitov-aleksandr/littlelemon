@@ -2,18 +2,6 @@ import React, { useState } from "react";
 import {Link} from 'react-router-dom';
 
 function BookingForm(props) {
-
-    const phonePlaceholder = "123-45-678";
-
-    const handleChange = event => {
-        const result = event.target.value.replace(/[^a-z]/gi, '');
-        setFirstName(result);
-      };
-
-    const handleScrollToTop = () => {
-        window.scrollTo(0, 0);
-      }
-
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [email, setEmail] = useState("");
@@ -26,6 +14,15 @@ function BookingForm(props) {
     const [finalTime, setFinalTime] = useState(
         props.availableTimes.map((times, i) => <option key={i}>{times}</option>)
     );
+
+    const handleChange = event => {
+        const result = event.target.value.replace(/[^a-z]/gi, '');
+        setFirstName(result);
+      };
+
+    const handleScrollToTop = () => {
+        window.scrollTo(0, 0);
+      }
 
     const handleSubmit = (e) => {
         console.log("?");
@@ -47,37 +44,37 @@ function BookingForm(props) {
                 <div className="title">Reservation</div>
                 <div className="subtitle">Book Now!</div>
                 <div className="input-container ic3">
-                    <input id="firstname" className="input" type="text" name="firstName" value={firstName} minLength={2} maxLength={20} onChange={handleChange}/>
+                    <input required id="firstname" className="input" type="text" name="firstName" value={firstName} minLength={2} maxLength={20} onChange={handleChange}/>
                     <label htmlFor="firstname" className="placeholderbook">First name: </label>
                 </div>
                 <div className="input-container ic3">
-                    <input id="lastname" className="input" type="text" placeholder=" " name="lastName" minLength={2} maxLength={25} value={lastName} onChange={(e) => setLastName(e.target.value)} />
+                    <input required id="lastname" className="input" type="text" placeholder=" " name="lastName" minLength={2} maxLength={25} value={lastName} onChange={(e) => setLastName(e.target.value)} />
                     <label htmlFor="lastname" className="placeholderbook">Last name: </label>
                 </div>
                 <div className="input-container ic3">
-                    <input id="email" className="input" type="email" placeholder=" " value={email} minLength={4} maxLength={40} onChange={(e) => setEmail(e.target.value)}/>
+                    <input required id="email" className="input" type="email" placeholder=" " value={email} minLength={4} maxLength={40} onChange={(e) => setEmail(e.target.value)}/>
                     <label htmlFor="email" className="placeholderbook">Email: </label>
                 </div>
                 <div className="input-container ic3">
-                    <input type="date" id="date" className="input" value={date} onChange={handleDateChange}/>
+                    <input required type="date" id="date" className="input" value={date} onChange={handleDateChange}/>
                     <label htmlFor="date" className="placeholderbook">Choose date: </label>
                 </div>
-                <div className="input-container ic3" data-tooltip="Format: 123-45-678">
-                    <input  id="telephone" className="input" type="tel" placeholder={phonePlaceholder} pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" value={telephone} minLength={6} maxLength={21} onChange={(e) => setTelephon(e.target.value)}/>
+                <div className="input-container ic3" data-tooltip="Format: +(0)123-45-678">
+                    <input required id="telephone" className="input" type="tel" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" value={telephone} minLength={6} maxLength={21} onChange={(e) => setTelephon(e.target.value)}/>
                     <label htmlFor="telephone" className="placeholderbook" >Phone Number: </label>
                 </div>
                 <div className="input-container ic3">
-                    <select id="time" className="inputTime" >
+                    <select required id="time" className="inputTime" >
                         {finalTime}
                     </select>
                     <label htmlFor="telephone" className="placeholderbook">Choose time: </label>
                 </div>
                 <div className="input-container ic3">
-                    <input className="input" type="number" min={1} max={10} id="guests" value={guests} onChange={(e) => setGests(e.target.value)} />
+                    <input required className="input" type="number" min={1} max={10} id="guests" value={guests} onChange={(e) => setGests(e.target.value)} />
                     <label htmlFor="date" className="placeholderbook">Number of guests: </label>
                 </div>
                 <div className="input-container ic3">
-                    <select id="occasion" className="inputTime" value={occasion} onChange={(e) => setOccasion(e.target.value)}>
+                    <select required id="occasion" className="inputTime" value={occasion} onChange={(e) => setOccasion(e.target.value)}>
                         <option>Birthday</option>
                         <option>Anniversary</option>
                         <option>Engagement</option>
@@ -86,7 +83,7 @@ function BookingForm(props) {
                     <label htmlFor="occasion" className="placeholderbook">Occasion: </label>
                 </div>
                 <div className="input-container ic3">
-                    <select id="preferences" className="inputTime" value={preferences} onChange={e => setPreferences(e.target.value)}>
+                    <select required id="preferences" className="inputTime" value={preferences} onChange={e => setPreferences(e.target.value)}>
                         <option>Indoors</option>
                         <option>Outdoor</option>
                     </select>

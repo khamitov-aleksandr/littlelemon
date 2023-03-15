@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import "./styles.css";
 import restauranfood from '../assets/restauranfood.jpg';
 import greeksalad from '../assets/greeksalad.jpg';
-import bruchetta from '../assets/bruchetta.svg';
+import bruchetta from '../assets/bruchetta.jpeg';
 import lemondessert from '../assets/lemondessert.jpg';
 import CustomersSay from './CustomersSay';
 import Chicago from './Chicago';
@@ -37,7 +37,7 @@ function Homepage() {
                   <h3>$12.99</h3>
                   <p>The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.</p>
                   <div className="card-footer">
-                    <Link to="/order-online" onClick={handleScrollToTop}><button>Order</button></Link>
+                    {/* <Link to="/order-online" onClick={handleScrollToTop}><button>Order</button></Link> */}
                   </div>
                 </div>
                 <div className='card'>
@@ -46,7 +46,7 @@ function Homepage() {
                   <h3>$5.99</h3>
                   <p>Our Bruschetta is made from grilled bread that has been smeared with garlic and seasoned with salt and olive oil. </p>
                   <div className="card-footer">
-                    <Link to="/order-online"><button onClick={handleScrollToTop}>Order</button></Link>
+                    {/* <Link to="/order-online"><button onClick={handleScrollToTop}>Order</button></Link> */}
                   </div>
                 </div>
                 <div className='card'>
@@ -55,7 +55,7 @@ function Homepage() {
                   <h3>$5.00</h3>
                   <p>This comes straight from grandma’s recipe book, every last ingredient has been sourced and is as authentic as can be imagined.</p>
                   <div className="card-footer">
-                    <Link to="/order-online"><button onClick={handleScrollToTop}>Order</button></Link>
+                    {/* <Link to="/order-online"><button onClick={handleScrollToTop}>Order</button></Link> */}
                   </div>
                 </div>
               </div>

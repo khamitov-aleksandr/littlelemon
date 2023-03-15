@@ -16,7 +16,7 @@ header > nav {
     justify-content: space-around;
     text-decoration: none;
     margin-right: 30px;
-  }
+}
 
 header > nav > ul {
     display: flex;
@@ -52,21 +52,17 @@ a:active {
     transition: font-weight 0.5s;
 }
 
-#burger-menu {
+.hamburger {
+    display: none;
+}
+
+.burger-menu {
     display: none;
 }
 
 /* ---------------------------------------------------------------- */
 /* ------------------------------MAIN------------------------------ */
 /* ---------------------------------------------------------------- */
-
-.main {
-    width: 1440px;
-}
-
-section {
-    width: 1440px;
-}
 
 h1 {
     font-family: 'Markazi Text';
@@ -132,7 +128,8 @@ button:hover {
 }
 
 button:disabled {
-    background-color: #ee9972;
+    background-color: lightgrey;
+    color: grey;
     cursor: auto;
 }
 
@@ -242,7 +239,7 @@ li {
 }
 /* hover effect on siblings */
 .cards:hover > :not(:hover) {
-    opacity: .3;
+    opacity: .8;
 }
 
 .card > img {
@@ -271,7 +268,7 @@ li {
 .m4 {
     height: 1480px;
     display: grid;
-    grid-template-columns: repeat(2, 250px);
+    grid-template-columns: repeat(3, 250px);
     grid-auto-rows: 350px;
     align-items: center;
     align-content: start;
@@ -335,6 +332,27 @@ aside > article > p, aside > article > div > p {
     color: #000000;
 }
 
+aside > article > img {
+    align-items: center;
+    align-self: center;
+    align-content: center;
+    text-align: center;
+    width: 15px;
+    height: 15px;
+    margin: 10px;
+    }
+
+aside > article > div > img {
+    width: 45px;
+    height: 45px;
+    margin: 0;
+}
+
+aside > article > p, aside > article > div > p {
+    color: #000000;
+    margin-top: 10px;
+}
+
 /* ---------------------------------------------------------------- */
 /* -------------------------------ABOUT---------------------------- */
 /* ---------------------------------------------------------------- */
@@ -371,10 +389,10 @@ aside > article > p, aside > article > div > p {
     margin: 20px 0 20px 0;
 }
 
-.btn3 {
-    left: 150px;
-    position: absolute;
+.about > article > a {
+    margin-left: 0;
 }
+
 
 [data-tooltip]::after {
     content: attr(data-tooltip);
@@ -394,20 +412,21 @@ aside > article > p, aside > article > div > p {
 
 [data-tooltip]:hover::after {
     opacity: 1;
-    margin-left: 150px;
+    margin-left: 120px;
     color: #eee;
 }
 
-.about > img {
-    width: 350px;
-    height: 310px;
+.about > div > img {
+    width: 300px;
+    height: 250px;
     border: 1px solid #000000;
     border-radius: 16px;
+    margin-right: 50px;
 }
 
-.about > img:first-of-type {
+.about > div > img:first-of-type {
     transform: scaleX(-1);
-    margin: 150px -180px 50px 100px;
+    margin: 80px -120px 50px 0;
 }
 
 /* ---------------------------------------------------------------- */
@@ -459,18 +478,28 @@ footer > nav > ul > li {
     margin-bottom: 20px;
 }
 
-input:required {
-    border: 0.5px solid red;
+/* input:required {
+    border: 0.5px solid black;
 }
+
+.required:after {
+    content:" *";
+    color: red;
+  }
 
 input:focus:invalid {
     border: 2px solid red;
 }
 
-input:invalid {
+input:required:invalid {
+    border-color: #F4CE14;
+  }
+
+input:required:invalid:focus::after {
     border: 1px solid red;
     animation: shake 0.2s 2;
 }
+
 @keyframes shake {
     25% {
         translate: 6px 0;
@@ -481,10 +510,18 @@ input:invalid {
     75% {
         translate: 6px 0;
     }
+} */
+
+input:required:valid {
+  border: 1px solid lightgreen;
 }
 
-input:valid {
-  border: 1px solid lightgreen;
+input:focus {
+    border: 2px solid #F4CE14;
+}
+
+input:not(:focus) {
+    border: 1px solid #F4CE14;
 }
 
 .attention {
@@ -496,7 +533,7 @@ input:valid {
     background-color: #495E57;
     border-radius: 20px;
     box-sizing: border-box;
-    height: 640px;
+    height: auto;
     padding: 20px;
     width: 360px;
     margin-bottom: 20px;
@@ -552,6 +589,7 @@ input:valid {
 }
 .ic2 {
     margin-top: 40px;
+    margin-bottom: 20px;
 }
 .ic3 {
     margin-top: 40px;
@@ -586,8 +624,13 @@ input:valid {
     width: 100%;
 }
 
-.inputTime:valid {
-    border: 1px solid lightgreen;
+.inputTime:focus {
+    border: 2px solid lightgreen;
+}
+
+.inputTime:not(:focus) {
+    content: "";
+    border: 1px solid #F4CE14;
 }
 
 /* Workaround to remove autofill color from inputs */
@@ -612,6 +655,11 @@ input, select {
 .cut-short {
     width: 50px;
 }
+
+.cut-short3 {
+    width: 70px;
+}
+
 .input:focus ~ .cut,
 .input:not(:placeholder-shown) ~ .cut {
     transform: translateY(8px);
@@ -698,7 +746,16 @@ input, select {
     width: 360px;
     margin-bottom: 20px;
 }
-
+.input-container-feedback {
+    height: 100px;
+    position: relative;
+    width: 100%;
+}
+.input-container-feedback > textarea {
+    padding: 10px;
+    max-width: 100%;
+    color: #eee;
+}
 .field {
     margin-top: 10px;
     margin-bottom: 20px;
@@ -804,14 +861,243 @@ textarea {
     width: 100%;
     margin-bottom: 10px;
 }
+.bookFormOnline {
+    background-color: #495E57;
+    border-radius: 20px;
+    box-sizing: border-box;
+    height: auto;
+    padding: 20px;
+    width: 360px;
+    margin-bottom: 20px;
+}
+
 
 
 /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
-@media screen and (max-width: 768px) {
-    html {
-        width: 768px;
+@media screen and (max-width: 1200px) {
+    header > nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        text-decoration: none;
+        margin-right: 0px;
+      }
+    header > nav > ul {
+        margin-left: 0px;
+    }
+    header > nav > ul > li {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .hero > img {
+        width: 350px;
+        height: 400px;
+        margin: 10px 0 0 0;
+      }
+    .highlights {
+        height: auto;
+    }
+    .cards {
+        grid-template-columns: repeat(3, 250px);
+        grid-auto-rows: 490px;
+        gap: 50px;
+    }
+    .card {
+        height: 450px;
+        padding: 10px 10px 10px 10px;
+        transition: .3s;
+    }
+    .card > p {
+        margin-bottom: 5px;
+    }
+    .testimonials {
+        height: 450px;
+    }
+    .testimonials > h2 {
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
 
+    aside {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    aside > article {
+        width: 180px;
+        height: 178px;
+        margin: 0 10px 0 10px;
+        padding: 10px 0 0 10px;
+    }
+    aside > article > img {
+        margin: 10px;
+    }
+    aside > article > p {
+        margin-top: 5px;
+    }
+    .about > article {
+        margin-right: 0;
+        margin-left: 60px;
+    }
+    .about > div > img {
+        width: 300px;
+        height: 250px;
+        margin-right: 10px;
+    }
+    .about > div > img:first-of-type {
+        transform: scaleX(-1);
+        margin: 80px -120px 50px 0;
+    }
+
+/* ---------------------------------------------------------------- */
+    .aboutrestaurant {
+        position: unset;
+        margin: auto;
+        height: 500px;
+        padding: 20px;
+        width: 360px;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .aboutrestaurant > .subtitle {
+        margin-bottom: 5px;
+        margin-top: 10px;
+    }
+    .aboutrestaurant > div {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .bg-img::before {
+        display: none;
+    }
+    .aboutrestaurant > span {
+        margin-top: 15px;
+    }
+    .title {
+        font-size: 34px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    .subtitle {
+        margin-top: 5px;
+    }
+    .m4 {
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(3, 250px);
+        grid-auto-rows: 470px;
+        align-items: center;
+        align-content: start;
+        justify-content: center;
+        justify-items: center;
+        gap: 50px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .bookForm {
+        height: auto;
+        padding: 20px;
+        width: 360px;
+        margin-bottom: 10px;
+    }
+    .bookForm > small {
+        margin-top: 10px;
+    }
+    .feedback {
+        height: auto;
+    }
+/*//////////////////////////////////////////////////////////////////////////////////////////////*/
+}
+@media screen and (max-width: 992px) {
+    .hero > img {
+        width: 250px;
+        height: 300px;
+        margin: 50px 0 0 0;
+      }
+    .testimonials {
+        height: auto;
+    }
+    .testimonials > h2 {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+    aside {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    aside > article {
+        width: 180px;
+        margin-bottom: 10px;
+        padding: 5px;
+    }
+    aside > article > div {
+        display: flex;
+        flex-direction: row;
+    }
+    aside > article > img {
+        width: 15px;
+        height: 15px;
+        margin: 10px;
+        }
+    aside > article > div > img {
+        width: 45px;
+        height: 45px;
+        margin-left: 10px;
+    }
+    aside > article > p, aside > article > div > p {
+        color: #000000;
+        margin-top: 10px;
+    }
+    .highlights > article {
+        margin: 25px 10px 10px 10px;
+    }
+    .cards {
+        grid-template-columns: repeat(1, 250px);
+        grid-auto-rows: 430px;
+        gap: 10px;
+    }
+    .card {
+        height: auto;
+        padding: 10px 10px 10px 10px;
+        transition: .3s;
+    }
+    .card > p {
+        margin-bottom: 0px;
+    }
+    .m4 {
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 250px);
+        grid-auto-rows: 470px;
+        align-items: center;
+        align-content: start;
+        justify-content: center;
+        justify-items: center;
+        gap: 50px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .about > article {
+        margin-left: 10px;
+    }
+    .about > div > img {
+        width: 200px;
+        height: 150px;
+        margin-right: 5px;
+    }
+    .about > div > img:first-of-type {
+        transform: scaleX(-1);
+        margin: 80px -80px 50px 0;
+    }
+}
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+@media screen and (max-width: 768px) {
     /* ---------------------------------------------------------------- */
     /* ------------------------------HEADER---------------------------- */
 
@@ -858,11 +1144,76 @@ textarea {
         font-weight: 700px;
         transition: font-weight 1s;
     }
-
-    #burger-menu {
+    .hamburger {
         display: block;
     }
-
+    .burger-menu {
+        height: 100%;
+        width: 4em;
+        display: flex;
+        flex-direction: column;
+        align-items:flex-start;
+        justify-content: space-between;
+        cursor: pointer;
+    }
+    .burger-bar {
+        width: 4em;
+        height: 0.3em;
+        background-color: #F4CE14;
+        border-radius: 0.5em;
+        margin: 3px;
+    }
+    .burger-menu:hover {
+        opacity: 0.8;
+    }
+    .menu {
+        width: 25%;
+        height: auto;
+        background-color: #F4CE14;
+        position: absolute;
+        top: 130px;
+        z-index: 0;
+        border-radius: 3.5em;
+    }
+    /*............... sliding menu ...............*/
+    .hidden {
+        display: none;
+    }
+    .visible {
+        display: inherit;
+    }
+    /*............... animation clicked ...............*/
+    .burger-bar.clicked:nth-child(1){
+        transform: rotate(45deg) translate(0.75em, 1.25em);
+        transition: easy-out 0.5s;
+    }
+    .burger-bar.clicked:nth-child(2){
+        transform: scale(0.1);
+        transition: easy-out 0.5s;
+    }
+    .burger-bar.clicked:nth-child(3){
+        transform: rotate(135deg) translate(-0.5em, 1em);
+        transition: easy-out 0.5s;
+    }
+    /*............... animation unclicked ...............*/
+    .burger-bar.unclicked {
+        transform: rotate(0) translate(0);
+        transition: cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s;
+    }
+    .ul-nav-header-burger {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .nav-item {
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+    .nav-item a.active {
+        text-decoration: none;
+        font-weight: bold;
+        color: #ee9972;
+      }
     /* ---------------------------------------------------------------- */
     /* ------------------------------MAIN------------------------------ */
 
@@ -909,7 +1260,7 @@ textarea {
     /* ------------------------------HERO------------------------------ */
     .hero {
         width: 100%;
-        height: 406px;
+        height: 300pxpx;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
@@ -953,13 +1304,13 @@ textarea {
 
     .highlights {
         width: 100%;
-        height: 580px;
+        height: 1190px;
         background: #FFFFFF;
     }
 
     .highlights > article {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: center;
         justify-content: space-evenly;
         margin-top: 15px;
@@ -967,22 +1318,23 @@ textarea {
 
     .highlights > article > h2 {
         color: #000000;
-        margin: 0;
+        text-align: center;
+        margin: 10px 0px 10px 0px;
     }
 
-    .highlights > article > button {
-        margin: 0px 0px 0px 0px;
+    .highlights > article > a {
+        margin: 0;
     }
 
     .cards {
         display: grid;
-        grid-template-columns: repeat(3, 230px);
-        grid-auto-rows: 400px;
+        grid-template-columns: repeat(1, 230px);
+        grid-auto-rows: 350px;
         align-items: start;
         align-content: center;
         justify-content: center;
         justify-items: center;
-        gap: 10px;
+        gap: 0px;
     }
 
     .card {
@@ -1003,20 +1355,21 @@ textarea {
     }
 
     .card > h3 {
-        margin-top: 1px;
-        margin-bottom: 1px;
+        margin-top: 2px;
+        margin-bottom: 2px;
         text-align: center;
     }
 
     .m4 {
+        height: auto;
         display: grid;
-        grid-template-columns: repeat(2, 200px);
-        grid-auto-rows: 350px;
+        grid-template-columns: repeat(1, 200px);
+        grid-auto-rows: 330px;
         align-items: center;
         align-content: start;
         justify-content: center;
         justify-items: center;
-        gap: 50px;
+        gap: 0px;
         margin-top: 2px;
         margin-bottom: 2px;
     }
@@ -1047,6 +1400,7 @@ textarea {
         min-width: 210px;
         min-height: 210px;
         align-items: center;
+        padding: 0;
     }
 
     aside > article > div {
@@ -1062,7 +1416,7 @@ textarea {
         text-align: center;
         width: 15px;
         height: 15px;
-        margin: 10px;
+        margin: 12px;
     }
 
     aside > article > div > img {
@@ -1081,7 +1435,7 @@ textarea {
 
     .about {
         width: 100%;
-        height: 780px;
+        height: auto;
         background: #FFFFFF;
         display: flex;
         flex-direction: column;
@@ -1114,24 +1468,39 @@ textarea {
         text-align: center;
     }
 
-    .about > article > button {
+    .about > article > a {
         text-align: center;
         align-content: center;
         margin: auto;
         align-items: center;
     }
 
-    .about > img {
-        width: 272px;
-        height: 338px;
+    .btn3 {
+        display: block;
+        left: 0;
+        right: 0;
+        position: relative;
+    }
+    .about > div {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: 10px;
+    }
+    .about > div > img {
+        width: 200px;
+        height: 150px;
         border: 1px solid #000000;
         border-radius: 16px;
-        margin: 0 0 10px 0;
+        margin: 5px;
     }
 
-    .about > img:first-of-type {
-        transform: scaleX(-1);
-        margin: 10px 0 10px 0;
+    .about > div > img:first-of-type {
+        transform: none;
+        margin: 0;
     }
 
     /* ---------------------------------------------------------------- */
@@ -1172,13 +1541,18 @@ textarea {
         margin: 0;
         width: auto;
     }
+    .title {
+        font-size: 30px;
+        font-weight: 400;
+        margin-top: 10px;
+    }
+    .subtitle {
+        font-size: 16px;
+        font-weight: 400;
+        margin-top: 5px;
+    }
 }
 
-    @media screen and (max-width: 320px) {
-        html {
-            width: 320px;
-        }
-    }
 /* @media screen and (max-width: 1200px) { */
 /* @media screen and (max-width: 992px) { */
 /* @media screen and (max-width: 768px) { */

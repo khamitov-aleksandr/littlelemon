@@ -27,8 +27,7 @@ function CustomersSay() {
                         src={require('../assets/sara.jpg')}
                         alt={"sara"}
                     />
-                        <p>Sara Lopez</p>
-                        <p>(Sara72)</p>
+                        <p>Sara</p>
                 </div>
                 <p>“Seriously cannot stop thinking about the Turkish Mac n’ Cheese!”</p>
             </article>
@@ -44,8 +43,7 @@ function CustomersSay() {
                         src={require('../assets/jhon.jpg')}
                         alt={"jhon"}
                     />
-                        <p>Jhon Aflek</p>
-                        <p>(Jhon83)</p>
+                        <p>Jhon</p>
                 </div>
                 <p>“This is the most delicious pasta I have ever tasted!”</p>
             </article>
@@ -61,8 +59,7 @@ function CustomersSay() {
                         src={require('../assets/devid.jpg')}
                         alt={"Devid"}
                     />
-                        <p>Devid Grey</p>
-                        <p>(Dav72)</p>
+                        <p>Devid</p>
                 </div>
                 <p>“I recommend trying the dessert! Very tasty!!”</p>
             </article>
@@ -78,8 +75,7 @@ function CustomersSay() {
                         src={require('../assets/elizabet.jpg')}
                         alt={"elizabet"}
                     />
-                        <p>Elizabet Blue</p>
-                        <p>(Eliz05)</p>
+                        <p>Elizabet</p>
                 </div>
                 <p>“Definitely the best restaurant. Discovery of the year!”</p>
             </article>

@@ -8,6 +8,9 @@ import OrderOnline from '../pages/OrderOnline';
 import Login from '../pages/Login';
 import Feedback from '../pages/Feedback';
 import Confirmation from '../pages/Confirmation';
+import Thanks from '../pages/Thanks';
+import SignIn from "../pages/SignIn.js";
+import SuccessfullyRegistered from "../pages/SuccessfullyRegistered.js";
 
 export default function Routing() {
     const handleSubmit= () => {
@@ -23,6 +26,9 @@ export default function Routing() {
             <Route path="/login" element={<Login/>}></Route>
             <Route path="/feedback" element={<Feedback onSubmit={handleSubmit}/>}></Route>
             <Route path="/confirmation" element= {<Confirmation />}/>
+            <Route path="/thanks" element= {<Thanks />}/>
+            <Route path="/signin" element= {<SignIn />}/>
+            <Route path="/successfullyregistered" element= {<SuccessfullyRegistered />}/>
         </Routes>
   );
 }

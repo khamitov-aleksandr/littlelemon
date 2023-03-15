@@ -25,7 +25,7 @@ function OrderOnline() {
 
     return (
         <>
-            <div className="bookForm" onChange={handleSubmit}>
+            <div className="bookFormOnline" onChange={handleSubmit}>
                 <div className="title">Order Online</div>
                 <div className="subtitle">Order Right Now!</div>
                 <span>I already have an account</span>
@@ -36,7 +36,8 @@ function OrderOnline() {
                 Postcode
                 City
                 Add note (optional)
-                <h3>Personal Details</h3>
+                <h3>Personal Details:</h3>
+
                 <div className="input-container ic3">
                     <input id="firstname" className="input" type="text" name="firstName" value={firstName} minLength={2} maxLength={20} onChange={handleChange}/>
                     <label htmlFor="firstname" className="placeholderbook">First name: </label>
@@ -57,8 +58,9 @@ function OrderOnline() {
                     <textarea id="comments" className="inputTime" rows={6} cols={30} value={comments} onChange={(e) => setComments(e.target.value)} />
                     <label htmlFor="comments" className="placeholderbook">Additional Comments: </label>
                 </div>
+                Checkbox * Receive discounts, loyalty offers and other updates via email, SMS and push notification
                 <small>Note: You cannot edit your reservation after submission. Please double-check your answer before submitting your reservation request.</small>
-                <Link to="/confirmation"><button className="submit" type="text" disabled={!firstName || !email || !telephone || !lastName} value="Reservation" onClick={handleScrollToTop}>Make your reservation</button></Link>
+                <Link to="/confirmation"><button className="submit" type="text" disabled={!firstName || !email || !telephone || !lastName} value="Reservation" onClick={handleScrollToTop}>Order & pay</button></Link>
             </div>
         </>
     )

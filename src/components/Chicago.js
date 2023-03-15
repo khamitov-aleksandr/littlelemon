@@ -13,8 +13,10 @@ function Chicago() {
                  Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. </p>
               <Link to="/about"><button className='btn3'>See more</button></Link>
             </article>
+            <div>
               <img src={MarioAndAdrianA} alt="Mario and Adrian side A" />
               <img src={MarioAndAdrianB} alt="Mario and Adrian side B" />
+            </div>
         </section>
     )
 }
