@@ -56,6 +56,7 @@ function Feedback({onSubmit}) {
                         <textarea
                             id="comment"
                             name="comment"
+                            spellcheck="true"
                             rows={6}
                             cols={30}
                             value={comment}

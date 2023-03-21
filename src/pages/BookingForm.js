@@ -52,7 +52,7 @@ function BookingForm(props) {
                     <label htmlFor="lastname" className="placeholderbook">Last name: </label>
                 </div>
                 <div className="input-container ic3">
-                    <input required id="email" className="input" type="email" placeholder=" " value={email} minLength={4} maxLength={40} onChange={(e) => setEmail(e.target.value)}/>
+                    <input required id="email" className="input" type="email" autoComplete="off" placeholder=" " value={email} minLength={4} maxLength={40} onChange={(e) => setEmail(e.target.value)}/>
                     <label htmlFor="email" className="placeholderbook">Email: </label>
                 </div>
                 <div className="input-container ic3">
@@ -90,7 +90,7 @@ function BookingForm(props) {
                     <label htmlFor="preferences" className="placeholderbook">Seating preferences: </label>
                 </div>
                 <div className="input-container ic3">
-                    <textarea id="comments" className="inputTime" rows={6} cols={30} value={comments} onChange={(e) => setComments(e.target.value)} />
+                    <textarea id="comments" className="inputTime" spellcheck="true" rows={6} cols={30} value={comments} onChange={(e) => setComments(e.target.value)} />
                     <label htmlFor="comments" className="placeholderbook">Additional Comments: </label>
                 </div>
                 <small>Note: You cannot edit your reservation after submission. Please double-check your answer before submitting your reservation request.</small>
