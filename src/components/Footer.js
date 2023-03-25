@@ -12,12 +12,15 @@ function Footer() {
   const handleScrollToTop = () => {
     window.scrollTo(0, 0);
   }
+  const currentDate = new Date();
+  const year = currentDate.getFullYear();
 
   return (
-    <footer>
+    <>
+      <footer>
         <img
-        src={footerlogo}
-        alt="footer-logo"
+          src={footerlogo}
+          alt="footer-logo"
         />
         <nav>
           <ul>
@@ -32,10 +35,10 @@ function Footer() {
         </nav>
         <nav>
           <ul>
-              <h5 className="footer-contact">Contact</h5>
-              <li><i>Adress:</i> P.za Dante, 57, 80134 Napoli NA, Italy</li>
-              <li><i>Phone number:</i> +00 (0) 0-00-00-00-00</li>
-              <li><i>Email:</i> little.lemon@gmail.com</li>
+            <h5 className="footer-contact">Contact</h5>
+            <li><i>Adress:</i> P.za Dante, 57, 80134 Napoli NA, Italy</li>
+            <li><i>Phone number:</i> +00 (0) 0-00-00-00-00</li>
+            <li><i>Email:</i> little.lemon@gmail.com</li>
           </ul>
         </nav>
         <nav>
@@ -46,7 +49,13 @@ function Footer() {
             <li><a target="_blank" rel="noreferrer" href="https://www.pinterest.com/" role="button" alt="Pinterest"><Pinterest /></a></li>
           </ul>
         </nav>
-    </footer>
+      </footer>
+      <div className="copyright" >
+          <span>Created by Aleksandr Khamitov</span>
+          <span> &copy; Copyright {year }</span>
+      </div>
+
+    </>
   )
 }
 

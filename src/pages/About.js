@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import restaurantchef from "../assets/restaurantchef.jpg";
 
 function About() {
     const handleScrollToTop = () => {
@@ -7,8 +8,9 @@ function About() {
       }
     return (
         <>
-            <div class="bg-img">
-                <form class="aboutrestaurant">
+            <div className="bg-img">
+                <img className="restaurantchef" src={restaurantchef} alt="Restaurant Chef" />
+                 <form className="aboutrestaurant">
                     <h2 className='title'>About Little Lemon Restaurant</h2>
                     <div className="subtitle">Little story</div>
                     <span>Fifteen years ago it was our dream to open a restaurant.

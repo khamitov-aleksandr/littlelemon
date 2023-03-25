@@ -13,9 +13,9 @@ function Reservations() {
     const output = fetchAPI(new Date());
     const [availableTimes, dispatch] = useReducer(updateTimes, output);
     return (
-        <main>
+        <div className="bg-img">
             <BookingForm availableTimes={availableTimes} updateTimes={dispatch}/>
-        </main>
+        </div>
     )
 }
 

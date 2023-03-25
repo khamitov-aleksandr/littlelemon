@@ -27,7 +27,7 @@ export default function Login() {
   }
 
   return (
-    <>
+        <div class="bg-img">
           <form className="form" onSubmit={handleSubmit}>
             <div className="title">Welcome</div>
             <div className="subtitle">login to your account</div>
@@ -48,6 +48,6 @@ export default function Login() {
              <div className="subtitle">Let's create your account!</div>
             <Link to="/signin"><button type="text" className="accept" onClick={handleScrollToTop}>Sign Up</button></Link>
           </form>
-    </>
+        </div>
   )
 }
